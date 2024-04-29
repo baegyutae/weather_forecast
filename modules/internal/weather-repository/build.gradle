@@ -1,12 +1,14 @@
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation project(':modules:domain:weather-domain')
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    runtimeOnly 'com.mysql:mysql-connector-java:8.0.0'
+    runtimeOnly 'com.mysql:mysql-connector-j'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
-    implementation project(':modules:internal:weather-service')
-    implementation project(':modules:domain:weather-domain')
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+repositories {
+    mavenCentral()
 }
 
 bootJar { enabled = false }

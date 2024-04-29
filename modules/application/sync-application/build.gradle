@@ -1,14 +1,12 @@
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    runtimeOnly 'com.mysql:mysql-connector-java:8.0.0'
-    compileOnly 'org.projectlombok:lombok'
-    annotationProcessor 'org.projectlombok:lombok'
-    implementation project(':modules:domain:weather-domain')
     implementation project(':modules:internal:weather-service')
-    implementation project(':modules:internal:weather-repository')
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
-bootJar { enabled = false }
+bootJar {
+    enabled = true
+    mainClass.set('com.example.weather_forecast.sync.SyncApplication')
+}
+
 jar { enabled = true }
