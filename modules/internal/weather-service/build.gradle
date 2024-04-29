@@ -6,6 +6,10 @@ dependencies {
     runtimeOnly 'com.mysql:mysql-connector-j'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
+
+    // xml 라이브러리
+    implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml'
+
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
